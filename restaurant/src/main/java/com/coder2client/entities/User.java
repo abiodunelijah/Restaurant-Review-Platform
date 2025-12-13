@@ -1,7 +1,6 @@
 package com.coder2client.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+
 import lombok.*;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
