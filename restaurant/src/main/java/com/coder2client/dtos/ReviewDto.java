@@ -1,6 +1,6 @@
-package com.coder2client.entities;
+package com.coder2client.dtos;
 
-
+import com.coder2client.entities.Photo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,27 +17,20 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Review {
+public class ReviewDto {
 
-    @Field(type = FieldType.Keyword)
     private String id;
 
-    @Field(type = FieldType.Text)
     private String content;
 
-    @Field(type = FieldType.Integer)
     private Integer rating;
 
-    @Field(type = FieldType.Date, format = DateFormat.date_hour_minute_second)
     private LocalDateTime datePosted;
 
-
-    @Field(type = FieldType.Date, format = DateFormat.date_hour_minute_second)
     private LocalDateTime lastEdited;
 
+    private List<PhotoDto> photos = new ArrayList<>();
 
-    @Field(type = FieldType.Nested)
-    private List<Photo> photos = new ArrayList<>();
+    private UserDto writtenBy;
 
-    private User writtenBy;
 }
